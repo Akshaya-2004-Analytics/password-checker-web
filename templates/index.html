@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Password Strength Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+</head>
+<body>
+    <div class="main-container">
+        <!-- Left: Form Section -->
+        <div class="form-section">
+            <div class="container">
+                <h1>Password Strength Checker</h1>
+                <form method="POST">
+                    <input type="password" name="password" placeholder="Enter your password" required />
+                    <button type="submit">Check Strength</button>
+                </form>
+
+                {% if result %}
+                    <div class="result">
+                        <p><strong>Result:</strong> {{ result }}</p>
+                        <div class="score-bar">
+                            <div class="score-fill" style="width: {{ score }}%; background-color: {{ color }};"></div>
+                        </div>
+                        {% if suggestions %}
+                            <ul>
+                                <strong>Suggestions:</strong>
+                                {% for tip in suggestions %}
+                                    <li>{{ tip }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Right: Image Section -->
+        <div class="image-section">
+            <img src="{{ url_for('static', filename='image.jpg') }}" alt="Secure Access Illustration" />
+        </div>
+    </div>
+</body>
+</html>

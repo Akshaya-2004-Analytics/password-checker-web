@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-container {
+    display: flex;
+    width: 90%;
+    height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.form-section {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 400px;
+    width: 100%;
+}
+
+.image-section {
+    flex: 1;
+    background-color: #f0f6ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-section img {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
+}
+
+/* Retain your existing input and button styles */
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #2980b9;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #1c5980;
+}
+
+.result {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.score-bar {
+    width: 100%;
+    height: 15px;
+    background-color: #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 10px 0 15px;
+}
+
+.score-fill {
+    height: 100%;
+    transition: width 0.4s ease;
+}
+
+ul {
+    list-style: square inside;
+    padding-left: 0;
+    margin-top: 10px;
+}
+
+li {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .main-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .image-section {
+        padding: 20px;
+    }
+}
